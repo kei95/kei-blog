@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.customBtn {
+    @apply bg-purple-500;
+    @apply shadow-md;
+}
+
+.customBtn:hover {
+    @apply opacity-50;
+    @apply shadow-md;
+}
