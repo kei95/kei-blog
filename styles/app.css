@@ -19,7 +19,10 @@
   @apply px-8;
 }
 
-.customBtn:hover {
-    @apply opacity-50;
-    @apply shadow-md;
+.title-text {
+  @apply text-5xl sm:text-7xl lg:text-9xl;
+  background: linear-gradient(280deg, #5594d5 50%, #d55594 70%, #edca85 94%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
