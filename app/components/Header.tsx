@@ -26,8 +26,8 @@ export default function Header() {
           strokeWidth="2"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M4 6h16M4 12h16m-7 6h7"
           />
         </svg>
