@@ -7,13 +7,12 @@
   @apply top-0;
   @apply flex;
   @apply justify-between;
-  @apply backdrop-blur;
+  @apply backdrop-blur-md;
   @apply border-b;
   @apply border-border;
   @apply transition-colors;
-  @apply duration-500;
+  @apply duration-300;
   /* might wanna come up with the way to darken the color on scroll */
-  @apply bg-background_darken;
   @apply bg-opacity-90;
   @apply py-4;
   @apply px-8;
