@@ -1,6 +1,25 @@
+import { useEffect, useState } from "react";
+
 export default function Header() {
+  const [isScrolledToChangeColor, setIsScrolledToChangeColor] = useState(false);
+  const headerColor = isScrolledToChangeColor
+    ? "bg-background_darken"
+    : "bg-transparent";
+
+  const handleScroll = () => {
+    setIsScrolledToChangeColor(window.pageYOffset > 25);
+  };
+
+  // set lister on scroll to change header's color
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
-    <header className="header-body text-white">
+    <header className={`header-body text-white ${headerColor}`}>
       <a href="/" className="text-lg font-bold">
         Logo
       </a>
