@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO: Bring this one back to inline since tailwind doesn't like it: https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction */
 .header-body {
   @apply sticky;
   @apply top-0;
@@ -19,9 +20,28 @@
 }
 
 .title-text {
-  @apply text-5xl sm:text-7xl lg:text-9xl;
+  @apply text-6xl sm:text-8xl md:text-9xl font-sans;
   background: linear-gradient(280deg, #5594d5 50%, #d55594 70%, #edca85 94%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #e6e6e6;
+}
+
+h2 {
+  @apply text-4xl;
+  @apply font-bold;
+}
+
+h3 {
+  @apply text-2xl;
+  @apply font-bold;
+}
+
+p {
+  @apply text-lg font-sans;
 }

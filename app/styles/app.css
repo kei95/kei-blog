@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.7 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -551,6 +551,67 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.list-item {
+  display: list-item;
+}
+
 .hidden {
   display: none;
 }
@@ -559,20 +620,68 @@ video {
   height: 1.5rem;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.max-h-\[950px\] {
+  max-height: 950px;
+}
+
 .w-6 {
   width: 1.5rem;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.max-w-screen-sm {
+  max-width: 640px;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-outside {
+  list-style-position: outside;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-decimal {
+  list-style-type: decimal;
 }
 
 .flex-row {
   flex-direction: row;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .gap-4 {
   gap: 1rem;
+}
+
+.self-center {
+  align-self: center;
 }
 
 .rounded-lg {
@@ -581,7 +690,7 @@ video {
 
 .bg-background {
   --tw-bg-opacity: 1;
-  background-color: rgb(14 8 58 / var(--tw-bg-opacity));
+  background-color: rgb(11 17 19 / var(--tw-bg-opacity));
 }
 
 .bg-primary {
@@ -591,7 +700,7 @@ video {
 
 .bg-background_darken {
   --tw-bg-opacity: 1;
-  background-color: rgb(7 24 52 / var(--tw-bg-opacity));
+  background-color: rgb(35 40 42 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
@@ -608,13 +717,29 @@ video {
   padding-right: 1rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .align-middle {
@@ -626,6 +751,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -634,6 +764,8 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+
+/* TODO: Bring this one back to inline since tailwind doesn't like it: https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction */
 
 .header-body {
   position: -webkit-sticky;
@@ -661,18 +793,19 @@ video {
 }
 
 .title-text {
-  font-size: 3rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 3.75rem;
   line-height: 1;
 }
 
 @media (min-width: 640px) {
   .title-text {
-    font-size: 4.5rem;
+    font-size: 6rem;
     line-height: 1;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .title-text {
     font-size: 8rem;
     line-height: 1;
@@ -684,6 +817,29 @@ video {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #e6e6e6;
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+p {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 @media (min-width: 768px) {
