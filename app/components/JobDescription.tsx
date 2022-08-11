@@ -19,24 +19,23 @@ export default function JobDescription({ job }: JobDescriptionProps) {
         <p>{period}</p>
       </div>
 
-      <br />
-      <p>{description}</p>
+      <p className="pb-3">{description}</p>
 
-      <br />
-      <ul className="list-disc list-inside">
+      <ul className="list-disc list-inside pb-3">
+        <p className="font-bold">Key roles</p>
         {roles.map((role, idx) => (
           <li key={`${idx}_${role}`}>{role}</li>
         ))}
       </ul>
 
-      <p>
+      <span className="font-bold">
         Tools:{" "}
         {tools.map((tool, idx) => (
-          <span key={tool} className="pr-1">
+          <span key={tool} className="pr-1 font-normal">
             {idx < tools.length - 1 ? `${tool},` : tool}
           </span>
         ))}
-      </p>
+      </span>
     </div>
   );
 }

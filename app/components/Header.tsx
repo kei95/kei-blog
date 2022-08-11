@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import { useEffect, useState } from "react";
 
 export default function Header() {
@@ -25,13 +26,10 @@ export default function Header() {
       </a>
       <ul className="hidden md:flex flex-row items-center align-middle gap-4">
         <li>
-          <a href="#">Home</a>
+          <Link to="#home">Home</Link>
         </li>
         <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
+          <Link to="#career">Career</Link>
         </li>
       </ul>
 
