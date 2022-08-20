@@ -1,5 +1,7 @@
 import RadioWaveButton from "~/assets/radioWaveCircleIcon";
 
+export const JOB_DESCRIPTION_TEST_ID = "job_description";
+
 export interface Job {
   title: string;
   period: string;
@@ -17,8 +19,9 @@ export default function JobDescription({ job }: JobDescriptionProps) {
   const { title, period, description, roles, tools, isCurrentJob } = job;
 
   return (
-    <div className="max-w-screen-sm">
+    <div className="max-w-screen-sm" data-testId={JOB_DESCRIPTION_TEST_ID}>
       <div className="flex flex-row">
+        {/* Left side */}
         <div className="flex flex-col items-start">
           <RadioWaveButton
             animationState={isCurrentJob ? "ACTIVE" : "INACTIVE"}
@@ -26,9 +29,12 @@ export default function JobDescription({ job }: JobDescriptionProps) {
             buttonSize={8}
             className="-mt-1.5 -ml-6"
           />
+
+          {/* vertical line */}
           <div className=" border-l-2 mt-1 ml-2.5 border-l-white h-full" />
         </div>
 
+        {/* Right side */}
         <div className="flex flex-col">
           <div className="flex items-end">
             <h3 className="pr-4">{title}</h3>
