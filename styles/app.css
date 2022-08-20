@@ -4,29 +4,34 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #e6e6e6;
+  @apply text-text;
 }
 
 h2 {
+  @apply text-textAccent;
   @apply text-4xl;
   @apply font-bold;
 }
 
 h3 {
-  @apply text-2xl;
+  @apply text-textAccent;
+  @apply text-xl;
   @apply font-bold;
 }
 
 p {
   @apply text-lg;
+  @apply text-text;
 }
 
 span {
   @apply text-base;
+  @apply text-text;
 }
 
 /* TODO: Bring this one back to inline since tailwind doesn't like it: https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction */
@@ -40,7 +45,6 @@ span {
   @apply border-border;
   @apply transition-colors;
   @apply duration-300;
-  /* might wanna come up with the way to darken the color on scroll */
   @apply bg-opacity-90;
   @apply py-4;
   @apply px-8;

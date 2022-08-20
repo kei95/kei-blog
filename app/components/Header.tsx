@@ -13,6 +13,7 @@ export default function Header() {
 
   // set lister on scroll to change header's color
   useEffect(() => {
+    // check if window exists to prevent it from crashing in server
     if (typeof window === "undefined") return;
     window.addEventListener("scroll", handleScroll);
 
@@ -21,12 +22,13 @@ export default function Header() {
 
   return (
     <header className={`header-body text-white ${headerColor}`}>
-      <a href="/" className="text-lg font-bold">
+      <Link to="/" className="text-lg font-bold">
         Logo
-      </a>
+      </Link>
+
       <ul className="hidden md:flex flex-row items-center align-middle gap-4">
         <li>
-          <Link to="#home">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="#career">Career</Link>

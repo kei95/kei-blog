@@ -1,6 +1,6 @@
 import Header from "~/components/Header";
-import Home from "~/routes/Home";
-import Career from "~/routes/Career";
+import Home from "~/routes/__Home";
+import Career from "~/routes/__Career";
 
 export default function Index() {
   return (

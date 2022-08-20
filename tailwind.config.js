@@ -6,6 +6,8 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
+      textAccent: "#E6E7E7",
+      text: "#CECFCF",
       primary: "#d59655",
       secondary: "#a45040",
       tertiary: "#83699f",
