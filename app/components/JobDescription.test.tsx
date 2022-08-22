@@ -1,4 +1,5 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+
 import JobDescription, { JOB_DESCRIPTION_TEST_ID } from "./JobDescription";
 import type { Job } from "./JobDescription";
 
@@ -28,14 +29,14 @@ const mockedJob: Job = {
 
 describe("<JobDescription / >", () => {
   test("given current job - it should render with given props and ANIMATED circle", () => {
-    const { getByTestId } = render(<JobDescription job={mockedJob} />);
+    render(<JobDescription job={mockedJob} />);
 
-    expect(getByTestId(JOB_DESCRIPTION_TEST_ID)).toMatchSnapshot();
+    expect(screen.getByTestId(JOB_DESCRIPTION_TEST_ID)).toMatchSnapshot();
   });
 
   test("given previous job - it should render with given props and REGULAR circle", () => {
-    const { getByTestId } = render(<JobDescription job={mockedJob} />);
+    render(<JobDescription job={mockedJob} />);
 
-    expect(getByTestId(JOB_DESCRIPTION_TEST_ID)).toMatchSnapshot();
+    expect(screen.getByTestId(JOB_DESCRIPTION_TEST_ID)).toMatchSnapshot();
   });
 });

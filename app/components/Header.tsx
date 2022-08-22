@@ -1,7 +1,9 @@
-import { Link } from "@remix-run/react";
 import { useEffect, useState } from "react";
+import RouteLink from "~/lib/RouteLink";
 
-export default function Header() {
+export const HEADER_TEST_ID = "HEADER_TEST_ID";
+
+export default function Header(): JSX.Element {
   const [isScrolledToChangeColor, setIsScrolledToChangeColor] = useState(false);
   const headerColor = isScrolledToChangeColor
     ? "bg-background_darken"
@@ -21,20 +23,24 @@ export default function Header() {
   });
 
   return (
-    <header className={`header-body text-white ${headerColor}`}>
-      <Link to="/" className="text-lg font-bold">
+    <header
+      className={`header-body text-white ${headerColor}`}
+      data-testid={HEADER_TEST_ID}
+    >
+      <RouteLink to="/" className="text-lg font-bold">
         Logo
-      </Link>
+      </RouteLink>
 
       <ul className="hidden md:flex flex-row items-center align-middle gap-4">
         <li>
-          <Link to="/">Home</Link>
+          <RouteLink to="/">Home</RouteLink>
         </li>
         <li>
-          <Link to="#career">Career</Link>
+          <RouteLink to="#career">Career</RouteLink>
         </li>
       </ul>
 
+      {/* Shows up only when the screen is less than medium size */}
       <button className="md:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"

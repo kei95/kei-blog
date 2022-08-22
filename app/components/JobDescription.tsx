@@ -15,11 +15,13 @@ interface JobDescriptionProps {
   job: Job;
 }
 
-export default function JobDescription({ job }: JobDescriptionProps) {
+export default function JobDescription({
+  job,
+}: JobDescriptionProps): JSX.Element {
   const { title, period, description, roles, tools, isCurrentJob } = job;
 
   return (
-    <div className="max-w-screen-sm" data-testId={JOB_DESCRIPTION_TEST_ID}>
+    <div className="max-w-screen-sm" data-testid={JOB_DESCRIPTION_TEST_ID}>
       <div className="flex flex-row">
         {/* Left side */}
         <div className="flex flex-col items-start">
