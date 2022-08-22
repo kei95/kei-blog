@@ -11,9 +11,10 @@ export default function RouteLink({
   to,
   children,
   ...rest
-}: LinkProps): JSX.Element {
-  const isTestingEnv = process.env.JEST_WORKER_ID !== undefined;
-  const isOnStorybook = process.env.STORYBOOK !== undefined;
+}: LinkProps): JSX.Element | null {
+  const isTestingEnv = typeof jest !== "undefined";
+  // asserts any since global doesn't know if it contains "IS_STORYBOOK"
+  const isOnStorybook = (global as any).IS_STORYBOOK;
 
   if (isTestingEnv || isOnStorybook)
     return (
