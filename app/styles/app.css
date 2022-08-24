@@ -702,6 +702,10 @@ video {
   border-radius: 0.5rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-l-2 {
   border-left-width: 2px;
 }
@@ -748,6 +752,16 @@ video {
   padding-right: 1rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .pr-4 {
   padding-right: 1rem;
 }
@@ -758,6 +772,10 @@ video {
 
 .pr-1 {
   padding-right: 0.25rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .align-middle {
@@ -772,6 +790,11 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .font-bold {
@@ -798,16 +821,24 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --tw-text-opacity: 1;
   color: rgb(206 207 207 / var(--tw-text-opacity));
+}
+
+h1 {
+  --tw-text-opacity: 1;
+  color: rgb(230 231 231 / var(--tw-text-opacity));
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
 }
 
 h2 {
   --tw-text-opacity: 1;
   color: rgb(230 231 231 / var(--tw-text-opacity));
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
 }
 
@@ -860,30 +891,24 @@ span {
 }
 
 .title-text {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
-@media (min-width: 640px) {
-  .title-text {
-    font-size: 6rem;
-    line-height: 1;
-  }
-}
-
-@media (min-width: 768px) {
-  .title-text {
-    font-size: 8rem;
-    line-height: 1;
-  }
-}
-
-.title-text {
   background: linear-gradient(280deg, #5594d5 50%, #d55594 70%, #edca85 94%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.title-text-h1 {
+  background: linear-gradient(280deg, #5594d5 80%, #d55594 90%, #edca85 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 640px) {
+  .sm\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 768px) {
@@ -893,5 +918,10 @@ span {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
   }
 }

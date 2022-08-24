@@ -6,10 +6,8 @@ const JOBS: Job[] = [GENERAC, SHERWA, VIMPLE];
 
 export default function Career() {
   return (
-    <>
-      <h2 className="text-4xl font-bold" id="career">
-        Career
-      </h2>
+    <div id="career">
+      <h2 className="text-4xl font-bold">Career</h2>
       <div className="py-2" />
       {JOBS.map((job, idx) => (
         <div key={`job_${job.title}`}>
@@ -17,6 +15,6 @@ export default function Career() {
           {idx < JOBS.length ? <br /> : null}
         </div>
       ))}
-    </>
+    </div>
   );
 }

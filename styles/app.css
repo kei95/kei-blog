@@ -8,13 +8,18 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  @apply text-text;
+  @apply text-text font-sans;
+}
+
+h1 {
+  @apply text-textAccent;
+  @apply text-4xl;
+  @apply font-bold;
 }
 
 h2 {
   @apply text-textAccent;
-  @apply text-4xl;
+  @apply text-2xl;
   @apply font-bold;
 }
 
@@ -51,8 +56,14 @@ span {
 }
 
 .title-text {
-  @apply text-6xl sm:text-8xl md:text-9xl font-sans;
   background: linear-gradient(280deg, #5594d5 50%, #d55594 70%, #edca85 94%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-text-h1 {
+  background: linear-gradient(280deg, #5594d5 80%, #d55594 90%, #edca85 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

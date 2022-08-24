@@ -36,6 +36,9 @@ export default function Header(): JSX.Element {
           <RouteLink to="/">Home</RouteLink>
         </li>
         <li>
+          <RouteLink to="#about">About</RouteLink>
+        </li>
+        <li>
           <RouteLink to="#career">Career</RouteLink>
         </li>
       </ul>
