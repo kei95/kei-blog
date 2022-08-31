@@ -6,7 +6,7 @@ export const HEADER_TEST_ID = "HEADER_TEST_ID";
 export default function Header(): JSX.Element {
   const [isScrolledToChangeColor, setIsScrolledToChangeColor] = useState(false);
   const headerColor = isScrolledToChangeColor
-    ? "bg-background_darken"
+    ? "bg-background_darken border-b border-border"
     : "bg-transparent";
 
   const handleScroll = () => {
@@ -40,6 +40,9 @@ export default function Header(): JSX.Element {
         </li>
         <li>
           <RouteLink to="#career">Career</RouteLink>
+        </li>
+        <li>
+          <RouteLink to="/posts">Posts</RouteLink>
         </li>
       </ul>
 

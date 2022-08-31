@@ -1,52 +1,51 @@
+import { notion } from "../app/adopter/notion";
 import { PrismaClient } from "@prisma/client";
+import type {
+  PageObjectResponse,
+  PropertyItemPropertyItemListResponse,
+  TitlePropertyItemObjectResponse,
+} from "@notionhq/client/build/src/api-endpoints";
 
 const prisma = new PrismaClient();
 
-const posts = [
-  {
-    slug: "my-first-post",
-    title: "My First Post",
-    markdown: `
-  # This is my first post
-  
-  Isn't it great?
-      `.trim(),
-  },
-  {
-    slug: "90s-mixtape",
-    title: "A Mixtape I Made Just For You",
-    markdown: `
-  # 90s Mixtape
-  
-  - I wish (Skee-Lo)
-  - This Is How We Do It (Montell Jordan)
-  - Everlong (Foo Fighters)
-  - Ms. Jackson (Outkast)
-  - Interstate Love Song (Stone Temple Pilots)
-  - Killing Me Softly With His Song (Fugees, Ms. Lauryn Hill)
-  - Just a Friend (Biz Markie)
-  - The Man Who Sold The World (Nirvana)
-  - Semi-Charmed Life (Third Eye Blind)
-  - ...Baby One More Time (Britney Spears)
-  - Better Man (Pearl Jam)
-  - It's All Coming Back to Me Now (Céline Dion)
-  - This Kiss (Faith Hill)
-  - Fly Away (Lenny Kravits)
-  - Scar Tissue (Red Hot Chili Peppers)
-  - Santa Monica (Everclear)
-  - C'mon N' Ride it (Quad City DJ's)
-      `.trim(),
-  },
-];
+const upsertBlogPosts = async () => {
+  // ======== first part - get database ========
+  const database = await notion.databases.query({
+    database_id: process.env.NOTION_DATABASE_ID || "",
+    sorts: [{ direction: "ascending", timestamp: "created_time" }],
+  });
 
-const upsertPosts = async () => {
-  for (const post of posts) {
+  if (!database) throw new Error("Failed to retrieve database");
+
+  const pages = database.results as PageObjectResponse[];
+
+  // ======== second part - get page titles ========
+
+  // loop through each page of retrieved database to upsert each items
+  for (const page of pages) {
+    const titleId = page.properties.Name.id;
+    const pageProperties = (await notion.pages.properties.retrieve({
+      page_id: page.id,
+      property_id: titleId,
+    })) as PropertyItemPropertyItemListResponse;
+
+    // extract title of the post
+    const [titleProperty] = pageProperties.results as [
+      TitlePropertyItemObjectResponse
+    ];
+    const pageTitle = titleProperty.title.plain_text;
+
+    const post = Object.assign(
+      {},
+      { id: page.id, title: pageTitle, createdAt: page.created_time }
+    );
+
     await prisma.post.upsert({
-      where: { slug: post.slug },
+      where: { id: page.id },
       update: post,
       create: post,
     });
   }
 };
 
-upsertPosts();
+upsertBlogPosts();

@@ -12,10 +12,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@notionhq/client": "^2.1.1",
     "@prisma/client": "^4.2.1",
     "@remix-run/node": "1.6.7",
     "@remix-run/react": "1.6.7",
     "@remix-run/serve": "1.6.7",
+    "marked": "^4.0.19",
+    "notion-to-md": "^2.5.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -35,6 +38,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@types/jest": "^28.1.7",
+    "@types/marked": "^4.0.6",
     "@types/node": "^18.7.13",
     "@types/react": "18.0.16",
     "@types/react-dom": "18.0.6",

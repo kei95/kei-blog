@@ -46,8 +46,6 @@ span {
   @apply flex;
   @apply justify-between;
   @apply backdrop-blur-md;
-  @apply border-b;
-  @apply border-border;
   @apply transition-colors;
   @apply duration-300;
   @apply bg-opacity-90;

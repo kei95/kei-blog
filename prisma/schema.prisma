@@ -11,10 +11,8 @@ datasource db {
 }
 
 model Post {
-  slug     String @id
-  title    String
-  markdown String
+  id    String @id
+  title String
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime
 }
