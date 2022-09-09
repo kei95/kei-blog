@@ -1,5 +1,7 @@
-import { notion } from "../app/adopter/notion";
 import { PrismaClient } from "@prisma/client";
+import { NotionToMarkdown } from "notion-to-md";
+
+import { notion } from "../app/adopter/notion";
 import type {
   PageObjectResponse,
   PropertyItemPropertyItemListResponse,
@@ -7,6 +9,18 @@ import type {
 } from "@notionhq/client/build/src/api-endpoints";
 
 const prisma = new PrismaClient();
+
+/** Gets page content as markdown */
+export async function getPostMarkdownById(id: string): Promise<{
+  markdown: string;
+}> {
+  const notionToMarkdown = new NotionToMarkdown({ notionClient: notion });
+
+  const notionPage = await notionToMarkdown.pageToMarkdown(id || "");
+  const markdown = notionToMarkdown.toMarkdownString(notionPage);
+
+  return { markdown };
+}
 
 const upsertBlogPosts = async () => {
   // ======== first part - get database ========
@@ -35,9 +49,12 @@ const upsertBlogPosts = async () => {
     ];
     const pageTitle = titleProperty.title.plain_text;
 
+    // extract page's content as markdown
+    const { markdown } = await getPostMarkdownById(page.id);
+
     const post = Object.assign(
       {},
-      { id: page.id, title: pageTitle, createdAt: page.created_time }
+      { id: page.id, title: pageTitle, markdown, createdAt: page.created_time }
     );
 
     await prisma.post.upsert({

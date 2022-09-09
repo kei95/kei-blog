@@ -7,6 +7,7 @@ import { getPostById } from "~/models/post.server";
 type LoaderData = { html: string };
 
 export const loader: LoaderFunction = async ({ params }) => {
+  // TODO: Add error handling
   return json<LoaderData>(await getPostById(params.id || ""));
 };
 
