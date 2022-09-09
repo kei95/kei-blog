@@ -31,12 +31,10 @@ h3 {
 
 p {
   @apply text-lg;
-  @apply text-text;
 }
 
 span {
   @apply text-base;
-  @apply text-text;
 }
 
 /* TODO: Bring this one back to inline since tailwind doesn't like it: https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction */

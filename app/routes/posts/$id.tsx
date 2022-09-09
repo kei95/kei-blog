@@ -15,7 +15,9 @@ export default function PostSlug() {
 
   return (
     <main className="mx-auto max-w-4xl">
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <article className="mx-auto prose dark:prose-invert">
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </article>
     </main>
   );
 }
