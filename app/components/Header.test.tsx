@@ -13,7 +13,9 @@ describe("<Header />", () => {
     const expectedLinks = [
       { to: "/", name: "Logo" },
       { to: "/", name: "Home" },
-      { to: "#career", name: "Career" },
+      { to: "/#about", name: "About" },
+      { to: "/#career", name: "Career" },
+      { to: "/posts", name: "Posts" },
     ];
 
     // Iterate over each links - it should find all expected links with its direction value

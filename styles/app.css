@@ -51,6 +51,7 @@ span {
   @apply bg-opacity-90;
   @apply py-4;
   @apply px-8;
+  @apply border-b;
 }
 
 .title-text {

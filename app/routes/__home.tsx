@@ -11,10 +11,6 @@ export default function Home() {
         A developer.
       </h1>
       <br />
-      <p className="text-textAccent text-center px-10">
-        Who is passionate about improving the lives of others through every
-        single line of his code.
-      </p>
     </div>
   );
 }

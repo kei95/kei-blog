@@ -5,9 +5,10 @@ export const HEADER_TEST_ID = "HEADER_TEST_ID";
 
 export default function Header(): JSX.Element {
   const [isScrolledToChangeColor, setIsScrolledToChangeColor] = useState(false);
+
   const headerColor = isScrolledToChangeColor
-    ? "bg-background_darken border-b border-border"
-    : "bg-transparent";
+    ? "bg-background_darken border-border"
+    : "bg-transparent border-transparent";
 
   const handleScroll = () => {
     setIsScrolledToChangeColor(window.pageYOffset > 25);
@@ -36,10 +37,10 @@ export default function Header(): JSX.Element {
           <RouteLink to="/">Home</RouteLink>
         </li>
         <li>
-          <RouteLink to="#about">About</RouteLink>
+          <RouteLink to="/#about">About</RouteLink>
         </li>
         <li>
-          <RouteLink to="#career">Career</RouteLink>
+          <RouteLink to="/#career">Career</RouteLink>
         </li>
         <li>
           <RouteLink to="/posts">Posts</RouteLink>

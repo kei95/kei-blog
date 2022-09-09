@@ -1,17 +1,13 @@
-import Header from "~/components/Header";
-import Home from "~/routes/__Home";
-import About from "~/routes/__About";
-import Career from "~/routes/__Career";
+import Home from "~/routes/__home";
+import About from "~/routes/__about";
+import Career from "~/routes/__career";
 
 export default function Index() {
   return (
-    <>
-      <Header />
-      <div className="container mx-auto max-w-7xl">
-        <Home />
-        <About />
-        <Career />
-      </div>
-    </>
+    <div className="container mx-auto max-w-7xl">
+      <Home />
+      <About />
+      <Career />
+    </div>
   );
 }
