@@ -11,9 +11,10 @@ datasource db {
 }
 
 model Post {
-  id       String @id
+  id       String  @id
   title    String
   markdown String
+  coverUrl String?
 
   createdAt DateTime
 }
