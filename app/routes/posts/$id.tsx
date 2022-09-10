@@ -4,7 +4,13 @@ import { useLoaderData } from "@remix-run/react";
 
 import { getPostById } from "~/models/post.server";
 
-type LoaderData = { html: string };
+/** Content to be consumed in this page */
+export type PageContent = {
+  html: string;
+  coverUrl: string;
+};
+
+type LoaderData = PageContent;
 
 export const loader: LoaderFunction = async ({ params }) => {
   // TODO: Add error handling
@@ -12,10 +18,13 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function PostSlug() {
-  const { html } = useLoaderData<LoaderData>();
+  const { html, coverUrl } = useLoaderData<LoaderData>();
 
   return (
     <main className="mx-auto max-w-4xl">
+      {coverUrl ? (
+        <img className="mx-auto h-80" src={coverUrl} alt={`Cover`} />
+      ) : null}
       <article className="mx-auto prose dark:prose-invert">
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
