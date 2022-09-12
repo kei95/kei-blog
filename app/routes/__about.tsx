@@ -1,8 +1,8 @@
 export default function About() {
   return (
-    <div id="about">
+    <div id="about" className="pb-14">
       <h1 className="title-text-h1 text-4xl">Who is Kei?</h1>
-      <div className="py-10">
+      <div className="pt-4">
         <p>
           I'm a software developer who believes a little idea makes huge impact
           to the world. I love creative solutions and to be inspired by them.

@@ -21,7 +21,7 @@ export default function PostSlug() {
   const { html, coverUrl } = useLoaderData<LoaderData>();
 
   return (
-    <main className="mx-auto max-w-4xl">
+    <main className="mx-auto max-w-4xl px-8">
       {coverUrl ? (
         <img className="mx-auto h-80" src={coverUrl} alt={`Cover`} />
       ) : null}
