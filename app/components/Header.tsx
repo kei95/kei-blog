@@ -25,11 +25,11 @@ export default function Header(): JSX.Element {
 
   return (
     <header
-      className={`header-body text-white ${headerColor}`}
+      className={`header-body text-white ${headerColor} z-50`}
       data-testid={HEADER_TEST_ID}
     >
-      <RouteLink to="/" className="text-lg font-bold">
-        Logo
+      <RouteLink to="/" className="text-lg font-bold font-serif">
+        Kei Yamashita
       </RouteLink>
 
       <ul className="hidden md:flex flex-row items-center align-middle gap-4">
@@ -43,7 +43,7 @@ export default function Header(): JSX.Element {
           <RouteLink to="/#career">Career</RouteLink>
         </li>
         <li>
-          <RouteLink to="/posts">Posts</RouteLink>
+          <RouteLink to="/#posts">Posts</RouteLink>
         </li>
       </ul>
 

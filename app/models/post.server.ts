@@ -5,7 +5,13 @@ import { prisma } from "~/db.server";
 import type { PageContent } from "~/routes/posts/$id";
 
 export async function getPosts(): Promise<Array<Post>> {
-  return prisma.post.findMany();
+  return prisma.post.findMany({
+    orderBy: [
+      {
+        createdAt: "desc",
+      },
+    ],
+  });
 }
 
 /** Get PostContent from Post entity and return it */
