@@ -17,6 +17,7 @@
     "@remix-run/node": "1.7.0",
     "@remix-run/react": "1.7.0",
     "@remix-run/serve": "1.7.0",
+    "dayjs": "1.11.5",
     "marked": "4.1.0",
     "notion-to-md": "^2.5.5",
     "react": "18.2.0",
