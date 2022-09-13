@@ -11,11 +11,11 @@ describe("<Header />", () => {
   test("check each link buttons - they should be tagged to expected section", () => {
     render(<Header />);
     const expectedLinks = [
-      { to: "/", name: "Logo" },
+      { to: "/", name: "Kei Yamashita" },
       { to: "/", name: "Home" },
       { to: "/#about", name: "About" },
       { to: "/#career", name: "Career" },
-      { to: "/posts", name: "Posts" },
+      { to: "/#posts", name: "Posts" },
     ];
 
     // Iterate over each links - it should find all expected links with its direction value
@@ -23,7 +23,7 @@ describe("<Header />", () => {
       const { to, name } = expectedLinks[i];
       const linkEl = screen.getByRole("link", { name });
 
-      expect(linkEl).toHaveAttribute("href", `#${to}`);
+      expect(linkEl).toHaveAttribute("href", `${to}`);
     }
   });
 });

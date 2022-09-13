@@ -26,6 +26,5 @@ function getYear(day: Date): string {
 }
 
 export function getPostCreatedAt(day: Date): string {
-  console.log("given day", getDate(day));
   return `${getMonth(day)} ${getDate(day)}, - ${getYear(day)}`;
 }

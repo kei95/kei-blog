@@ -2,42 +2,42 @@
 
 exports[`<Header /> render the component - it should have expected elements 1`] = `
 <header
-  class="header-body text-white bg-transparent border-transparent"
+  class="header-body text-white bg-transparent border-transparent z-50"
   data-testid="HEADER_TEST_ID"
 >
   <a
-    class="text-lg font-bold"
-    href="#/"
+    class="text-lg font-bold font-serif"
+    href="/"
   >
-    Logo
+    Kei Yamashita
   </a>
   <ul
     class="hidden md:flex flex-row items-center align-middle gap-4"
   >
     <li>
       <a
-        href="#/"
+        href="/"
       >
         Home
       </a>
     </li>
     <li>
       <a
-        href="#/#about"
+        href="/#about"
       >
         About
       </a>
     </li>
     <li>
       <a
-        href="#/#career"
+        href="/#career"
       >
         Career
       </a>
     </li>
     <li>
       <a
-        href="#/posts"
+        href="/#posts"
       >
         Posts
       </a>

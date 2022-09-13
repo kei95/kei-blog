@@ -18,7 +18,7 @@ export default function RouteLink({
 
   if (isTestingEnv || isOnStorybook)
     return (
-      <a href={`#${to}`} {...rest}>
+      <a href={`${to}`} {...rest}>
         {children}
       </a>
     );

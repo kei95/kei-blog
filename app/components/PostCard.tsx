@@ -17,7 +17,7 @@ export default function PostCard({ post }: PostCardProps) {
         <img
           className="h-80 w-full rounded-md"
           src={post.coverUrl ?? ""}
-          alt={`Cover`}
+          alt={`post cover: ${post.title}`}
         />
       ) : (
         <div className="h-80 w-full flex justify-center align-middle items-center rounded-md bg-white">
