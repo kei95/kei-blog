@@ -6,8 +6,12 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-postcss",
   ],
   framework: "@storybook/react",
+  core: {
+    builder: "webpack4",
+  },
   webpackFinal: async (config) => {
     config.resolve.plugins = [new TsconfigPathsPlugin()];
     return config;

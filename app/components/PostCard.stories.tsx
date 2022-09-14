@@ -16,14 +16,16 @@ const mockedPost: Post = {
   markdown: "",
 };
 
-const Template: ComponentStory<typeof PostCard> = () => (
-  <PostCard post={mockedPost} />
+const Template: ComponentStory<typeof PostCard> = (args) => (
+  <PostCard {...args} />
 );
 
 export const PostWithCover = Template.bind({});
+PostWithCover.args = {
+  post: mockedPost,
+};
 
 export const PostWithoutCover = Template.bind({});
-
 PostWithoutCover.args = {
   post: Object.assign({}, mockedPost, { ...mockedPost, coverUrl: null }),
 };
