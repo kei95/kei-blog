@@ -13,8 +13,8 @@ const mockedPost: Post = {
 
 describe("<PostCard />", () => {
   test("Given a post - it should render the component with given property", () => {
-    const expectedDate = "Aug 31st, - 2022";
-    const linkName = "post cover: Lorem_Ipsum Aug 31st, - 2022 Lorem_Ipsum";
+    const expectedDate = "Aug 28th, - 2022";
+    const linkName = "post cover: Lorem_Ipsum Aug 28th, - 2022 Lorem_Ipsum";
     const altText = `post cover: ${mockedPost.title}`;
 
     render(<PostCard post={mockedPost} />);
@@ -30,8 +30,8 @@ describe("<PostCard />", () => {
   });
 
   test("Given a post without a cover - it should render the component with default post image", () => {
-    const expectedDate = "Aug 31st, - 2022";
-    const linkName = "Blog post Aug 31st, - 2022 Lorem_Ipsum";
+    const expectedDate = "Aug 28th, - 2022";
+    const linkName = "Blog post Aug 28th, - 2022 Lorem_Ipsum";
     const defaultCoverText = "Blog post";
     const mockedPostWithoutCover = {
       ...mockedPost,

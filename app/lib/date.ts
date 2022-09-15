@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-function getDateSuffix(date: string) {
+export function getDateSuffix(date: string) {
   const lastCharOfDay = date.substring(date.length - 1);
 
   let surFix = "th";
@@ -11,20 +11,16 @@ function getDateSuffix(date: string) {
   return surFix;
 }
 
-function getDate(day: Date): string {
-  const date = String(dayjs(day).daysInMonth());
+export function getDate(day: Date): string {
+  const date = String(dayjs(day).get("date"));
 
   return `${date}${getDateSuffix(date)}`;
 }
 
-function getMonth(day: Date): string {
+export function getMonth(day: Date): string {
   return String(dayjs(day).format("MMM"));
 }
 
-function getYear(day: Date): string {
+export function getYear(day: Date): string {
   return String(dayjs(day).year());
-}
-
-export function getPostCreatedAt(day: Date): string {
-  return `${getMonth(day)} ${getDate(day)}, - ${getYear(day)}`;
 }

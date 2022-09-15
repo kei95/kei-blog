@@ -1,10 +1,14 @@
 import type { Post } from "@prisma/client";
-import { getPostCreatedAt } from "~/lib/date";
+import { getDate, getMonth, getYear } from "~/lib/date";
 
 import RouteLink from "~/lib/RouteLink";
 
 interface PostCardProps {
   post: Post;
+}
+
+function getPostCreatedAt(day: Date): string {
+  return `${getMonth(day)} ${getDate(day)}, - ${getYear(day)}`;
 }
 
 export default function PostCard({ post }: PostCardProps) {
