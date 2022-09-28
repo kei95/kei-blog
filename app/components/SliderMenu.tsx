@@ -22,8 +22,8 @@ export default function SliderMenu() {
   };
 
   return (
-    <div data-testid={SLIDER_MENU_TEST_ID}>
-      <button className="md:hidden" type="button" onClick={openSliderMenu}>
+    <div data-testid={SLIDER_MENU_TEST_ID} className="md:hidden">
+      <button type="button" onClick={openSliderMenu}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"

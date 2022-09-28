@@ -44,10 +44,10 @@ exports[`<Header /> render the component - it should have expected elements 1`] 
     </li>
   </ul>
   <div
+    class="md:hidden"
     data-testid="SLIDER_MENU_TEST_ID"
   >
     <button
-      class="md:hidden"
       type="button"
     >
       <svg
