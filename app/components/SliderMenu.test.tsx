@@ -1,17 +1,24 @@
 import { render, screen } from "@testing-library/react";
 
-import Header, { HEADER_TEST_ID } from "./Header";
+import SliderMenu, { SLIDER_MENU_TEST_ID } from "./SliderMenu";
 
-describe("<Header />", () => {
+describe("<SliderMenu />", () => {
+  Object.defineProperties(window.HTMLElement.prototype, {
+    offsetWidth: {
+      get: function () {
+        return "500px";
+      },
+    },
+  });
+
   test("render the component - it should have expected elements", () => {
-    render(<Header />);
-    expect(screen.getByTestId(HEADER_TEST_ID)).toMatchSnapshot();
+    render(<SliderMenu />);
+    expect(screen.getByTestId(SLIDER_MENU_TEST_ID)).toMatchSnapshot();
   });
 
   test("check each link buttons - they should be tagged to expected section", () => {
-    render(<Header />);
+    render(<SliderMenu />);
     const expectedLinks = [
-      { to: "/", name: "Kei Yamashita" },
       { to: "/", name: "Home" },
       { to: "/#about", name: "About" },
       { to: "/#career", name: "Career" },
@@ -21,8 +28,7 @@ describe("<Header />", () => {
     // Iterate over each links - it should find all expected links with its direction value
     for (let i = 0; i < expectedLinks.length; i++) {
       const { to, name } = expectedLinks[i];
-      // get only the first elements as it gets ones "hidden" in slide menu too
-      const linkEl = screen.getAllByText(name)[0];
+      const linkEl = screen.getByRole("link", { name });
 
       expect(linkEl).toHaveAttribute("href", `${to}`);
     }

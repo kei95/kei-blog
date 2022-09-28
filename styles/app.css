@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO: figure out the way to do the scroll only in main page */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;

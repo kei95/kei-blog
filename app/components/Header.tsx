@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+
 import RouteLink from "~/lib/RouteLink";
+import SliderMenu from "~/components/SliderMenu";
 
 export const HEADER_TEST_ID = "HEADER_TEST_ID";
 
@@ -10,18 +12,21 @@ export default function Header(): JSX.Element {
     ? "bg-background_darken border-border"
     : "bg-transparent border-transparent";
 
-  const handleScroll = () => {
-    setIsScrolledToChangeColor(window.pageYOffset > 25);
-  };
-
   // set lister on scroll to change header's color
   useEffect(() => {
     // check if window exists to prevent it from crashing in server
     if (typeof window === "undefined") return;
+
+    // set default background color first for the case the page is reloaded
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, []);
+
+  const handleScroll = () => {
+    setIsScrolledToChangeColor(window.pageYOffset > 25);
+  };
 
   return (
     <header
@@ -47,23 +52,7 @@ export default function Header(): JSX.Element {
         </li>
       </ul>
 
-      {/* Shows up only when the screen is less than medium size */}
-      <button className="md:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4 6h16M4 12h16m-7 6h7"
-          />
-        </svg>
-      </button>
+      <SliderMenu />
     </header>
   );
 }
