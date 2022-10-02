@@ -12,7 +12,7 @@ export default function Posts({ posts }: PostsProps) {
 
       <div className="py-2" />
 
-      <div className="relative grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-6 mx-auto gap-y-16 ">
+      <div className="relative grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-6 mx-auto gap-y-16">
         {posts.map((post) => (
           <PostCard post={post} key={`${post.id}`} />
         ))}

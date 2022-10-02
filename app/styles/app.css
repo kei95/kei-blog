@@ -1200,6 +1200,10 @@ video {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
 }
@@ -1337,6 +1341,10 @@ video {
   flex-wrap: wrap;
 }
 
+.place-content-center {
+  place-content: center;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -1434,6 +1442,21 @@ video {
 
 .stroke-white {
   stroke: #ffffff;
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.object-fill {
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .py-2 {
@@ -1641,6 +1664,10 @@ span {
 }
 
 @media (min-width: 640px) {
+  .sm\:grid-cols-8 {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
   .sm\:text-8xl {
     font-size: 6rem;
     line-height: 1;
@@ -1648,6 +1675,10 @@ span {
 }
 
 @media (min-width: 768px) {
+  .md\:col-span-8 {
+    grid-column: span 8 / span 8;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -1660,6 +1691,11 @@ span {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 
+  .md\:gap-x-6 {
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+
   .md\:text-9xl {
     font-size: 8rem;
     line-height: 1;
@@ -1669,6 +1705,10 @@ span {
 @media (min-width: 1024px) {
   .lg\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-8 {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 
   .lg\:gap-x-6 {
