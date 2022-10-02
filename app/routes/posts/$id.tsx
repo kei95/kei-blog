@@ -4,6 +4,16 @@ import { useLoaderData } from "@remix-run/react";
 
 import { getPostById } from "~/models/post.server";
 
+// gets highlight.js's styles to apply cosmetic update to codes in given html
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: "https:/cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/a11y-dark.min.css",
+    },
+  ];
+}
+
 /** Content to be consumed in this page */
 export type PageContent = {
   html: string;
@@ -13,7 +23,6 @@ export type PageContent = {
 type LoaderData = PageContent;
 
 export const loader: LoaderFunction = async ({ params }) => {
-  // TODO: Add error handling
   return json<LoaderData>(await getPostById(params.id || ""));
 };
 
