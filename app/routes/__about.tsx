@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div id="about" className="pb-14">
-      <h1 className="title-text-h1 text-4xl">Who is Kei?</h1>
+      <h1 className="title-text text-4xl w-max">Who is Kei?</h1>
       <div className="pt-4">
         <p>
           I'm a software developer who believes a little idea makes huge impact

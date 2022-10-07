@@ -8,7 +8,7 @@ interface PostsProps {
 export default function Posts({ posts }: PostsProps) {
   return (
     <div id="posts" className="pb-14">
-      <h2 className="title-text-h1 text-4xl">Posts</h2>
+      <h2 className="title-text text-4xl w-max">Posts</h2>
 
       <div className="py-2" />
 

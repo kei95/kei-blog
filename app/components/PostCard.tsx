@@ -25,7 +25,7 @@ export default function PostCard({ post }: PostCardProps) {
         />
       ) : (
         <div className="h-80 w-full flex justify-center align-middle items-center rounded-md bg-white">
-          <h1 className="title-text-h1 text-4xl text-center">Blog post</h1>
+          <h1 className="title-text text-4xl text-center">Blog post</h1>
         </div>
       )}
 

@@ -7,7 +7,7 @@ const JOBS: Job[] = [GENERAC, SHERWA, VIMPLE];
 export default function Career() {
   return (
     <div id="career" className="pb-14">
-      <h2 className="title-text-h1 text-4xl">Career</h2>
+      <h2 className="title-text text-4xl w-max">Career</h2>
 
       <div className="py-2" />
 

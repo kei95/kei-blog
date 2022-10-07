@@ -1253,6 +1253,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
@@ -1303,6 +1307,12 @@ video {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .max-w-4xl {
@@ -1414,6 +1424,11 @@ video {
   background-color: rgb(213 150 85 / var(--tw-bg-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-background_darken {
   --tw-bg-opacity: 1;
   background-color: rgb(35 40 42 / var(--tw-bg-opacity));
@@ -1423,9 +1438,24 @@ video {
   background-color: transparent;
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+.from-\[\#edca85\] {
+  --tw-gradient-from: #edca85;
+  --tw-gradient-to: rgb(237 202 133 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-\[\#d55594\] {
+  --tw-gradient-to: rgb(213 85 148 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #d55594, var(--tw-gradient-to);
+}
+
+.to-\[\#5594d5\] {
+  --tw-gradient-to: #5594d5;
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+          background-clip: text;
 }
 
 .fill-white {
@@ -1441,6 +1471,10 @@ video {
      object-fit: cover;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1454,6 +1488,11 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .px-\[10wv\] {
@@ -1528,6 +1567,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-transparent {
+  color: transparent;
 }
 
 .text-textAccent {
@@ -1611,17 +1654,44 @@ span {
 }
 
 .title-text {
-  background: linear-gradient(280deg, #5594d5 50%, #d55594 70%, #edca85 94%);
-  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+          background-clip: text;
+  color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #edca85;
+  --tw-gradient-to: rgb(237 202 133 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(213 85 148 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #d55594, var(--tw-gradient-to);
+  --tw-gradient-to: #5594d5;
 }
 
-.title-text-h1 {
-  background: linear-gradient(280deg, #5594d5 80%, #d55594 90%, #edca85 100%);
-  background-clip: text;
+.title-text-hover {
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+          background-clip: text;
+  color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-gradient-from: #edca85;
+  --tw-gradient-to: rgb(237 202 133 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(213 85 148 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #d55594, var(--tw-gradient-to);
+  --tw-gradient-to: #5594d5;
+}
+
+.title-text-hover:hover {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.hover\:bg-gradient-to-r:hover {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.hover\:opacity-60:hover {
+  opacity: 0.6;
 }
 
 @media (prefers-color-scheme: dark) {

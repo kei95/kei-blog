@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import RouteLink from "~/lib/RouteLink";
 import SliderMenu from "~/components/SliderMenu";
+import GradientHoverText from "~/components/GradientHoverText";
 
 export const HEADER_TEST_ID = "HEADER_TEST_ID";
 
@@ -39,16 +40,24 @@ export default function Header(): JSX.Element {
 
       <ul className="hidden md:flex flex-row items-center align-middle gap-4">
         <li>
-          <RouteLink to="/">Home</RouteLink>
+          <RouteLink to="/">
+            <GradientHoverText title="Home" />
+          </RouteLink>
         </li>
         <li>
-          <RouteLink to="/#about">About</RouteLink>
+          <RouteLink to="/#about">
+            <GradientHoverText title="About" />
+          </RouteLink>
         </li>
         <li>
-          <RouteLink to="/#career">Career</RouteLink>
+          <RouteLink to="/#career">
+            <GradientHoverText title="Career" />
+          </RouteLink>
         </li>
         <li>
-          <RouteLink to="/#posts">Posts</RouteLink>
+          <RouteLink to="/#posts">
+            <GradientHoverText title="Posts" />
+          </RouteLink>
         </li>
       </ul>
 

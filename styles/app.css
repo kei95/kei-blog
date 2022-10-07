@@ -53,15 +53,15 @@ span {
 }
 
 .title-text {
-  background: linear-gradient(280deg, #5594d5 50%, #d55594 70%, #edca85 94%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @apply bg-clip-text;
+  @apply text-transparent;
+  @apply bg-white;
+  @apply bg-gradient-to-r from-[#edca85] via-[#d55594] to-[#5594d5];
 }
 
-.title-text-h1 {
-  background: linear-gradient(280deg, #5594d5 80%, #d55594 90%, #edca85 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.title-text-hover {
+  @apply bg-clip-text;
+  @apply text-transparent;
+  @apply bg-white;
+  @apply hover:bg-gradient-to-r from-[#edca85] via-[#d55594] to-[#5594d5];
 }

@@ -1,5 +1,7 @@
 import { useState } from "react";
+
 import RouteLink from "~/lib/RouteLink";
+import GradientHoverText from "~/components/GradientHoverText";
 
 export const SLIDER_MENU_TEST_ID = "SLIDER_MENU_TEST_ID";
 type SliderState = "OPEN" | "CLOSED";
@@ -44,23 +46,37 @@ export default function SliderMenu() {
       <aside
         className={`overflow-x-hidden right-0 duration-300 fixed top-0 h-screen bg-background_darken ${sliderWidth}`}
       >
-        <div className="flex flex-col">
-          <button type="button" onClick={closeSliderMenu}>
-            &times;
-          </button>
-          <RouteLink onClick={handleOnclickLink} to="/">
-            Home
-          </RouteLink>
-          <RouteLink onClick={handleOnclickLink} to="/#about">
-            About
-          </RouteLink>
-          <RouteLink onClick={handleOnclickLink} to="/#career">
-            Career
-          </RouteLink>
-          <RouteLink onClick={handleOnclickLink} to="/#posts">
-            Posts
-          </RouteLink>
-        </div>
+        <ul className="inline-block">
+          <li>
+            <button
+              className="px-4 p-1 text-4xl hover:opacity-60"
+              type="button"
+              onClick={closeSliderMenu}
+            >
+              &times;
+            </button>
+          </li>
+          <li>
+            <RouteLink onClick={handleOnclickLink} to="/">
+              <GradientHoverText className="px-4 py-1" title="Home" />
+            </RouteLink>
+          </li>
+          <li>
+            <RouteLink onClick={handleOnclickLink} to="/#about">
+              <GradientHoverText className="px-4 py-1" title="About" />
+            </RouteLink>
+          </li>
+          <li>
+            <RouteLink onClick={handleOnclickLink} to="/#career">
+              <GradientHoverText className="px-4 py-1" title="Career" />
+            </RouteLink>
+          </li>
+          <li>
+            <RouteLink onClick={handleOnclickLink} to="/#posts">
+              <GradientHoverText className="px-4 py-1" title="Posts" />
+            </RouteLink>
+          </li>
+        </ul>
       </aside>
     </div>
   );
