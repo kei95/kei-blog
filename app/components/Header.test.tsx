@@ -11,12 +11,15 @@ describe("<Header />", () => {
   test("check each link buttons - they should be tagged to expected section", () => {
     render(<Header />);
     const expectedLinks = [
-      { to: "/", name: "Kei Yamashita" },
       { to: "/", name: "Home" },
       { to: "/#about", name: "About" },
       { to: "/#career", name: "Career" },
       { to: "/#posts", name: "Posts" },
     ];
+
+    // check for logo name
+    const linkEl = screen.getByText("Kei Yamashita");
+    expect(linkEl).toHaveAttribute("href", "/");
 
     // Iterate over each links - it should find all expected links with its direction value
     for (let i = 0; i < expectedLinks.length; i++) {
@@ -24,7 +27,8 @@ describe("<Header />", () => {
       // get only the first elements as it gets ones "hidden" in slide menu too
       const linkEl = screen.getAllByText(name)[0];
 
-      expect(linkEl).toHaveAttribute("href", `${to}`);
+      // access parent as it's the real clickable element
+      expect(linkEl.parentElement).toHaveAttribute("href", `${to}`);
     }
   });
 });
