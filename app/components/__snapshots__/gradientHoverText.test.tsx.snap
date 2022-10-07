@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GradientHoverText /> render the component - it should match the snapshot 1`] = `
+<h3
+  class="bg-clip-text text-transparent bg-white hover:bg-gradient-to-r from-[#edca85] via-[#d55594] to-[#5594d5] px-4"
+>
+  Lorem Ipsum
+</h3>
+`;
