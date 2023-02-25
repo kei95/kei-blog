@@ -32,7 +32,11 @@ export default function PostSlug() {
   return (
     <main className="mx-auto max-w-4xl px-8">
       {coverUrl ? (
-        <img className="mx-auto h-80" src={coverUrl} alt={`Cover`} />
+        <img
+          className="mx-auto h-80 object-cover"
+          src={coverUrl}
+          alt={`Cover`}
+        />
       ) : null}
       <article className="mx-auto prose dark:prose-invert">
         <div dangerouslySetInnerHTML={{ __html: html }} />
