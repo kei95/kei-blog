@@ -26,7 +26,7 @@ export default function Index() {
   const typeSafePosts = getTypeSafeLoadedData<Post[]>(posts);
 
   return (
-    <div className="container mx-auto px-[10wv] scroll-smooth scroll-p-16">
+    <div className="container mx-auto px-[12wv] scroll-smooth scroll-p-16">
       <Home />
       <About />
       <Career />
