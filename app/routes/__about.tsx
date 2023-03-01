@@ -4,22 +4,15 @@ export default function About() {
       <h1 className="title-text text-4xl w-max">Who is Kei?</h1>
       <div className="pt-4">
         <p>
-          I'm a software developer who believes a little idea makes huge impact
-          to the world. I love creative solutions and to be inspired by them.
-          The moment when my idea turns into reality is the best moment of my
-          life!
-        </p>
-        <br />
-        <p>
-          I'm currently located in Vancouver yet always open to any kind of
-          opportunity to contribute to software solutions that makes the world
-          the better place.
-        </p>
-        <br />
-        <p>
-          Are you looking for somebody who can make something amazing with? You
-          are in the right place. Please feel free to email or message me. I
-          would love to hear about your idea!
+          I am a software developer who believes that even the smallest ideas
+          can make a huge impact on the world. I enjoy finding creative
+          solutions and being inspired by them. The moment when my ideas become
+          reality is the best part of my life. Although I am based in Vancouver,
+          I am open to any opportunities that allow me to contribute to software
+          solutions that make the world a better place. If you're looking for
+          someone to create something amazing with, you've come to the right
+          place. Please feel free to email or message me - I would love to hear
+          about your ideas!
         </p>
       </div>
     </div>

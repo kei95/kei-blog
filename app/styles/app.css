@@ -1447,9 +1447,9 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.px-\[10wv\] {
-  padding-left: 10wv;
-  padding-right: 10wv;
+.px-\[12wv\] {
+  padding-left: 12wv;
+  padding-right: 12wv;
 }
 
 .px-8 {
@@ -1701,5 +1701,10 @@ span {
   .lg\:gap-x-6 {
     -moz-column-gap: 1.5rem;
          column-gap: 1.5rem;
+  }
+
+  .lg\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
   }
 }

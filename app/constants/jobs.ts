@@ -4,12 +4,13 @@ export const GENERAC: Job = {
   title: "Generac Power Systems",
   period: "Apr 2021 - Now",
   description:
-    "As a software developer, primary developing an app that allows a user to monitor his/her energy consumption and bill estimation.",
+    "As a software developer, thriving to create a customer-facing app called PWRview that lets users check their smart home's status such as monthly/yearly billing data, live data of their PWRcell devices, etc. Also, flexibly jumping around multiple server services to enhance the team's development experience with BFF(Backend-for-frontend) pattern.",
   roles: [
+    "Introduced a new branching strategy to improve the team's development experience",
+    "Actively introduce and integrate new tools, libraries, and new features of languages to the team",
+    `Add a massive amount of automation tests to the project based on the principle of "Refactoring" by Martin Fowler`,
     "Implement the app's features with rich animations",
     "Design software architecture for new features from server side to client side",
-    "Add new APIs to the server and maintain existing ones",
-    "Led the team to add tests to the project and reduced the rate of bug report",
   ],
   tools: [
     "TypeScript",
@@ -27,7 +28,7 @@ export const SHERWA: Job = {
   title: "Sherwa Online Services",
   period: "Oct 2019 - Apr 2021",
   description:
-    "Developed an app that is focused on helping gamers to match up and interact with each other outside of the games' native platform",
+    "Developed an app that allows gamers to connect with each other, facilitating interaction and matchmaking outside of the game's native platform.",
   roles: [
     "Worked closely with the designer team to implement the app's UI/UX from scratch",
     "Helped the back-end team by adding APIs modifying DB",
